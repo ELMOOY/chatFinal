@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrar al Chat Web</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      width: 200px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #16a085;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Ingresa tu Nickname</h2>
+    <input type="text" id="nicknameInput" placeholder="Tu nombre...">
+    <br>
+    <button onclick="enterChat()">Entrar</button>
+  </div>
+
+  <script>
+    function enterChat() {
+      const nickname = document.getElementById('nicknameInput').value.trim();
+      if (!nickname) {
+        alert('Por favor escribe tu nombre.');
+        return;
+      }
+      // Borramos cualquier userId previo
+      localStorage.removeItem('userId');
+      localStorage.setItem('nickname', nickname);
+      window.location.href = 'chat.html';
+    }
+  </script>
+</body>
+</html>

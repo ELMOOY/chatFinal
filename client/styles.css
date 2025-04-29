@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: #f0f0f0;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 25%;
+    background: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  #userList {
+    overflow-y: auto;
+    flex-grow: 1;
+  }
+  
+  #userList div {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+  }
+  
+  #userList div:hover {
+    background: #34495e;
+  }
+  
+  #userList div.selected {
+    background: #1abc9c;
+  }
+  
+  #openGroupModalBtn {
+    background: #1abc9c;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #efeae2;
+  }
+  
+  .chat-header {
+    padding: 15px;
+    background: #2c3e50;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #efeae2;
+  }
+  
+  .message-bubble {
+    max-width: 60%;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background: #ffffff;
+    word-wrap: break-word;
+  }
+  
+  .message-bubble.me {
+    background: #dcf8c6;
+    margin-left: auto;
+  }
+  
+  .input-area {
+    padding: 10px;
+    background: #ffffff;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .input-area input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .input-area button {
+    background: #1abc9c;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+  }
+  
+  #userSelection div {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  #userSelection div.selected {
+    background: #1abc9c;
+    color: white;
+  }
+  
+  .chat-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1abc9c;
+    padding: 10px;
+    color: white;
+  }
+  
+  .chat-section-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  #showUsersBtn {
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  #showUsersBtn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  #userListModal .modal-content {
+    max-height: 400px;
+    overflow-y: auto;
+  }

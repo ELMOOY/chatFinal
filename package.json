@@ -1,0 +1,24 @@
+{
+    "name": "chat-web",
+    "version": "1.0.0",
+    "description": "Chat Web con Socket.IO y microservicios gRPC",
+    "main": "server/gateway/index.js",
+    "scripts": {
+        "start-gateway": "node server/gateway/index.js",
+        "start-user-service": "node server/user-service/server.js",
+        "start-group-service": "node server/group-service/server.js",
+        "start-all": "concurrently \"npm run start-user-service\" \"npm run start-group-service\" \"npm run start-gateway\""
+    },
+    "dependencies": {
+        "@grpc/grpc-js": "^1.8.13",
+        "@grpc/proto-loader": "^0.7.7",
+        "express": "^4.18.2",
+        "socket.io": "^4.8.1",
+        "uuid": "^9.0.0"
+    },
+    "devDependencies": {
+        "concurrently": "^7.6.0"
+    },
+    "author": "",
+    "license": "MIT"
+}

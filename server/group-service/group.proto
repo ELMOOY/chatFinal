@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package group;
+
+service GroupService {
+  rpc CreateGroup (CreateGroupRequest) returns (CreateGroupResponse);
+  rpc ListGroups (Empty) returns (GroupList);
+}
+
+message CreateGroupRequest {
+  string name = 1;
+  repeated string memberIds = 2;
+}
+
+message CreateGroupResponse {
+  string groupId = 1;
+}
+
+message Group {
+  string id = 1;
+  string name = 2;
+  repeated string memberIds = 3;
+}
+
+message GroupList {
+  repeated Group groups = 1;
+}
+
+message Empty {}

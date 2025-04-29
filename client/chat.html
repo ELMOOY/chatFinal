@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat Web</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+
+      <!-- barra CHATS -->
+      <div class="chat-header-top">
+        <div class="chat-section-title">Chats</div>
+        <button id="showUsersBtn" onclick="openUserListModal()">
+          <img src="images/persona.png" alt="Usuarios">
+        </button>
+      </div>
+
+      <div id="userList"></div>
+      <button id="openGroupModalBtn" onclick="openGroupModal()">Nuevo Chat o Grupo</button>
+    </div>
+
+    <div class="chat">
+      <div class="chat-header" id="chatHeader">Selecciona un chat</div>
+      <div id="chatMessages" class="messages"></div>
+      <div class="input-area">
+        <input type="text" id="messageInput" placeholder="Escribe un mensaje...">
+        <button id="sendMessageBtn">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Grupo/Chat -->
+  <div id="groupModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Crear Nuevo Chat</h2>
+      <input type="text" id="groupNameInput" placeholder="Nombre del chat">
+      <div id="userSelection"></div>
+      <button onclick="createGroup()">Crear Chat</button>
+      <button onclick="closeGroupModal()">Cancelar</button>
+    </div>
+  </div>
+
+  <!--  Modal de usuarios conectados -->
+  <div id="userListModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Usuarios Conectados</h2>
+      <div id="connectedUsers"></div>
+      <button onclick="closeUserListModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

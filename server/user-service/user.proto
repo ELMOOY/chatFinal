@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+  rpc RegisterUser (RegisterRequest) returns (RegisterResponse);
+  rpc SetUserStatus (StatusRequest) returns (StatusResponse);
+  rpc ListUsers (Empty) returns (UserList);
+}
+
+message RegisterRequest {
+  string username = 1;
+}
+
+message RegisterResponse {
+  string id = 1;
+}
+
+message StatusRequest {
+  string id = 1;
+  bool online = 2;
+}
+
+message StatusResponse {
+  bool success = 1;
+}
+
+message User {
+  string id = 1;
+  string username = 2;
+  bool online = 3;
+}
+
+message UserList {
+  repeated User users = 1;
+}
+
+message Empty {}
